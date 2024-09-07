@@ -1,1 +1,1 @@
-# Projeto-Lumini
+# Projeto-Lumini, Grupo 08 - Pesquisa e Inovação 1ADSB
