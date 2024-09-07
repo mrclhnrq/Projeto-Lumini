@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador Lumini</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <div class="container">
+                <div class="titulo">
+                        <h1>SIMULADOR FINANCEIRO</h1>
+                </div>
+
+                <div class="input-hectar">
+                        Quantos hectares você possuí? <input type="number" id="input_hectare">
+                </div>
+                <div class="input-producao">
+                        Qual sua produção média por safra?(kg) <input type="number" id="input_producao">
+                </div>
+                <div class="input-kg">
+                        Por quanto você vende o kg do lúpulo? <input type="number" id="input_kg">
+                </div>
+                <div class="botao">
+                        <button onclick="calcular()">Calcular rendimento</button>
+                </div>
+
+                <div id="div_msg"></div>
+        </div>
+</body>
+
+</html>
+
+<script>
+        function calcular() {
+                var hectare = Number(input_hectare.value)
+                var producao = Number(input_producao.value)
+                var kg = Number(input_kg.value)
+
+                var semMonit = hectare * producao * kg
+
+                var porcKg = (((350 - kg) / kg) * 100)
+                var kgFinal = kg + (porcKg / 100) * kg
+
+                var dobroRend = semMonit * 2
+                var triploRend = semMonit * 3
+
+                var aumentoProd = producao * 0.3
+                var prodFInal = producao + aumentoProd
+
+                var comMonit = hectare * prodFInal * kgFinal
+                var porcFinal = (((comMonit - semMonit) / semMonit) * 100)
+
+                var lucro = comMonit - semMonit
+
+                div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
+<br>        
+        Sem serviços de monitoramento de iluminação você irá faturar <b>R$${semMonit}</b> por safra.
+<br> <br> 
+        <b>RENDIMENTO COM MONITORAMENTO</b>
+<br>    
+        O monitoramento adequado pode te levar a produzir cones mais desenvolvidos e de melhor qualidade, 
+        aumentando o valor da venda por quilo, de aproximadamente, <b>${porcKg}%</b>, 
+<br>        
+        podendo chegar em valores de até <b>R$350,00</b> na venda do quilo.
+<br>
+        Há também a chance de aumento de <b>30%</b> na sua produção total, 
+        indo de <b>${producao}kg</b> para <b>${prodFInal}kg</b> por safra.
+<br>
+        Há cenários que produtores aumentam o número de safras produzidas por ano, dobrando (<b>R$${dobroRend}</b>), 
+        e até triplicando (<b>R$${triploRend}</b>), sua 
+        receita com os devidos manejos com base nos dados coletados.
+<br>
+        Assim, com implantação dos nossos sensores, você poderia aumentar o faturamento para, 
+        aproximadamente, <b>R$${comMonit}</b> por safra.
+<br>
+        Gerando lucro de <b>R$${lucro}</b>.
+        `
+        }
+</script>
