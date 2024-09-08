@@ -1,105 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simulador Lumini</title>
-        <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-        <div class="container">
-                <div class="titulo">
-                        <h1>SIMULADOR FINANCEIRO</h1>
-                </div>
-
-                <div class="input-hectar">
-                        Quantos hectares você possuí? <input type="number" id="input_hectare">
-                </div>
-                <div class="input-producao">
-                        Qual sua produção média por safra?(kg):<input type="number" id="input_producao">
-                </div>
-                <div class="input-kg">
-                        Por quanto você vende o kg do lúpulo? <input type="number" id="input_kg">
-                </div>
-                <div class="botao">
-                        <button onclick="calcular()">Calcular rendimento</button>
-                </div>
-
-                <div id="div_msg"></div>
-        </div>
-</body>
-
-</html>
-
-<script>
-        function calcular() {
-                var hectare = Number(input_hectare.value)
-                var producao = Number(input_producao.value)
-                var kg = Number(input_kg.value)
-
-                var semMonit = hectare * producao * kg
-
-                var porcKg = (((350 - kg) / kg) * 100)
-                var kgFinal = kg + (porcKg / 100) * kg
-
-                var dobroRend = semMonit * 2
-                var triploRend = semMonit * 3
-
-                var aumentoProd = producao * 0.3
-                var prodFInal = producao + aumentoProd
-
-                var comMonit = hectare * prodFInal * kgFinal
-                var porcFinal = (((comMonit - semMonit) / semMonit) * 100)
-
-                var lucro = comMonit - semMonit
-
-                div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
-=======
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulador Lumini</title>
-</head>
-<body>
-    <h1>SIMULADOR FINANCEIRO</h1> 
-    <br>
-    Quantos hectares você possuí? <input type="number" id="input_hectare"> <br>
-    Qual sua produção média por safra?(kg) <input type="number" id="input_producao"> <br>
-    Por quanto você vende o kg do lúpulo? <input type="number" id="input_kg"> <br>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <button onclick="calcular()">Calcular rendimento</button> <br>
+  <body>
+    <div class="container">
+      <div class="titulo">
+        <h1>SIMULADOR FINANCEIRO</h1>
+      </div>
 
-    <div id="div_msg"></div>
-</body>
+      <div class="input-hectar">
+        Quantos hectares você possuí? <input type="number" id="input_hectare" />
+      </div>
+      <div class="input-producao">
+        Qual sua produção média por safra?(kg):<input
+          type="number"
+          id="input_producao"
+        />
+      </div>
+      <div class="input-kg">
+        Por quanto você vende o kg do lúpulo?
+        <input type="number" id="input_kg" />
+      </div>
+      <div class="botao">
+        <button onclick="calcular()">Calcular rendimento</button>
+      </div>
+
+      <div id="div_msg"></div>
+    </div>
+  </body>
 </html>
 
 <script>
-    function calcular() {
-        var hectare = Number(input_hectare.value)
-        var producao = Number(input_producao.value)
-        var kg = Number(input_kg.value)
+  function calcular() {
+    var hectare = Number(input_hectare.value);
+    var producao = Number(input_producao.value);
+    var kg = Number(input_kg.value);
 
-        var semMonit = hectare * producao * kg
+    var semMonit = hectare * producao * kg;
 
-        var porcKg = (((350 - kg) /kg)*100) 
-        var kgFinal = kg + (porcKg / 100) * kg
+    var porcKg = ((350 - kg) / kg) * 100;
+    var kgFinal = kg + (porcKg / 100) * kg;
 
-        var dobroRend = semMonit * 2
-        var triploRend = semMonit * 3
+    var dobroRend = semMonit * 2;
+    var triploRend = semMonit * 3;
 
-        var aumentoProd = producao * 0.3
-        var prodFInal = producao + aumentoProd
+    var aumentoProd = producao * 0.3;
+    var prodFInal = producao + aumentoProd;
 
-        var comMonit = hectare * prodFInal * kgFinal
-        var porcFinal = (((comMonit - semMonit) /semMonit) *100) 
+    var comMonit = hectare * prodFInal * kgFinal;
+    var porcFinal = ((comMonit - semMonit) / semMonit) * 100;
 
-        var lucro = comMonit - semMonit
+    var lucro = comMonit - semMonit;
 
-        div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
->>>>>>> origin
+    div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
+
 <br>        
         Sem serviços de monitoramento de iluminação você irá faturar <b>R$${semMonit}</b> por safra.
 <br> <br> 
@@ -121,10 +80,6 @@
         aproximadamente, <b>R$${comMonit}</b> por safra.
 <br>
         Gerando lucro de <b>R$${lucro}</b>.
-        `
-<<<<<<< HEAD
-        }
-=======
-    }
->>>>>>> origin
+        `;
+  }
 </script>
