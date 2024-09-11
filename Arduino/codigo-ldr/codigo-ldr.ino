@@ -12,7 +12,7 @@ void loop() {
   // os dados coletados pela porta analogica serão armazenados na variável
   // definindo labels/variáveis e valores que serão mostrados na tela para melhorar o entendimento do gráfico
   Serial.print("MiniVoltsMax:");
-  Serial.print(800);
+  Serial.print(900);
   Serial.print(" ");
   Serial.print("Luminosidade:");
   Serial.print(valorLuminosidade);
